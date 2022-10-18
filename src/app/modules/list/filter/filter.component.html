@@ -1,0 +1,40 @@
+<div class="conatinter">
+  <div class="row my-4">
+    <div class="col-3">
+      <label for="Storage">Storage</label>
+      <mat-slider
+        thumbLabel
+        [displayWith]="formatLabel"
+        tickInterval="10"
+        step="250"
+        min="0"
+        max="1000"
+        aria-label="units"
+      ></mat-slider>
+    </div>
+    <div class="col-4">
+      <label for="RAM">RAM</label>
+      <ng-container *ngFor="let item of ramOption">
+        <mat-checkbox [value]="item" (click)="applyRam(item)">{{ item }}</mat-checkbox>
+      </ng-container>
+    </div>
+    <div class="col-2">
+      <label for="RAM">HDD</label>
+      <select class="form-control form-control-sm" (change)="applyHDD($event)">
+        <option value="HDD-none">select HDD</option>
+        <ng-container *ngFor="let item of hddOption">
+          <option>{{ item }}</option>
+        </ng-container>
+      </select>
+    </div>
+    <div class="col-3">
+      <label for="RAM">Location</label>
+      <select class="form-control form-control-sm" (change)="applyLocation($event)">
+        <option value="Location-none">select location</option>
+        <ng-container *ngFor="let item of location">
+          <option [value]="item">{{ item }}</option>
+        </ng-container>
+      </select>
+    </div>
+  </div>
+</div>
