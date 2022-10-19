@@ -3411,11 +3411,8 @@ export class CommonService {
   ];
   public temp: any;
   public isFilter = new BehaviorSubject<any>(false);
-  public pageEvent: any;
-  public datasource!: null;
-  public pageIndex!:number;
-  public pageSize!:number;
-  public length!:number;
+  public pageDetail = new BehaviorSubject<any>(null);
+
   constructor() {
     // this.list.splice(20);
     this.list.slice(this.list.length - 300)
